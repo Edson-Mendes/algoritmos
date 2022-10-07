@@ -1,9 +1,9 @@
-package br.com.emendes.sorting;
+package br.com.emendes.sorting.run;
 
 import br.com.emendes.sorting.model.User;
 import br.com.emendes.sorting.sort.InsertionSort;
 
-public class App {
+public class InsertionSortRun {
   public static void main(String[] args) {
     User user1 = new User("Edson");
     User user2 = new User("Débora");
