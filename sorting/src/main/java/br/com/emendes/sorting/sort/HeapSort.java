@@ -1,8 +1,8 @@
 package br.com.emendes.sorting.sort;
 
-public class HeapSort {
+public class HeapSort<T extends Comparable<T>> {
 
-  public void sort(int[] array) {
+  public void sort(T[] array) {
     int lastIndex = array.length - 1;
     buildHeap(array, lastIndex);
     swap(array, 0, lastIndex--);
@@ -18,7 +18,7 @@ public class HeapSort {
    *
    * @param array que será transformado em um max-heap
    */
-  private void buildHeap(int[] array, int lastIndex) {
+  private void buildHeap(T[] array, int lastIndex) {
     for (int i = parent(lastIndex); i >= 0; i--) {
       heapify(array, i, lastIndex);
     }
@@ -30,15 +30,15 @@ public class HeapSort {
    * @param array   array onde será aplicado o heapify
    * @param iFather indice do node pai.
    */
-  private void heapify(int[] array, int iFather, int lastIndex) {
+  private void heapify(T[] array, int iFather, int lastIndex) {
     int iLeft = leftChild(iFather);
     int iRight = rightChild(iFather);
     int iSmaller;
-    if (iLeft <= lastIndex && array[iLeft] > array[iFather])
+    if (iLeft <= lastIndex && biggerThan(array[iLeft], array[iFather]))
       iSmaller = iLeft;
     else
       iSmaller = iFather;
-    if (iRight <= lastIndex && array[iRight] > array[iSmaller])
+    if (iRight <= lastIndex && biggerThan(array[iRight], array[iSmaller]))
       iSmaller = iRight;
     if (iSmaller != iFather) {
       swap(array, iSmaller, iFather);
@@ -83,10 +83,18 @@ public class HeapSort {
    * @param i1    índice do primeiro elemento.
    * @param i2    índice do segundo elemento.
    */
-  private void swap(int[] array, int i1, int i2) {
-    int aux = array[i1];
+  private void swap(T[] array, int i1, int i2) {
+    T aux = array[i1];
     array[i1] = array[i2];
     array[i2] = aux;
+  }
+
+  /**
+   * Verifica se {@code o1} é maior que {@code o2}.
+   * @return {@code true} se o1 maior que o2, {@code false} caso contrário.
+   */
+  private boolean biggerThan(T o1, T o2){
+    return o1.compareTo(o2) > 0;
   }
 
 }

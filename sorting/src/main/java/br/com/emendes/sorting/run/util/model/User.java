@@ -1,4 +1,4 @@
-package br.com.emendes.sorting.model;
+package br.com.emendes.sorting.run.util.model;
 
 public record User(String name) implements Comparable<User> {
 

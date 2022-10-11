@@ -1,7 +1,7 @@
 package br.com.emendes.sorting.run;
 
-import br.com.emendes.sorting.model.User;
-import br.com.emendes.sorting.sort.InsertionSort;
+import br.com.emendes.sorting.run.util.model.User;
+import br.com.emendes.sorting.sort.SelectionSort;
 
 public class SelectionSortRun {
 
@@ -27,8 +27,7 @@ public class SelectionSortRun {
         user9, user10, user11, user12, user13, user14, user15, user16};
 
     show(users);
-    System.out.println("------------------------------------------------------------------------- ");
-    new InsertionSort<User>().sort(users);
+    new SelectionSort<User>().sort(users);
     show(users);
   }
 

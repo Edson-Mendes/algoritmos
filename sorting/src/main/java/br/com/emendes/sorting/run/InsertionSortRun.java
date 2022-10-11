@@ -1,6 +1,6 @@
 package br.com.emendes.sorting.run;
 
-import br.com.emendes.sorting.model.User;
+import br.com.emendes.sorting.run.util.model.User;
 import br.com.emendes.sorting.sort.InsertionSort;
 
 public class InsertionSortRun {
@@ -26,7 +26,6 @@ public class InsertionSortRun {
         user9, user10, user11, user12, user13, user14, user15, user16};
 
     show(users);
-    System.out.println("------------------------------------------------------------------------- ");
     InsertionSort<User> sorter = new InsertionSort<>();
     sorter.sort(users);
     show(users);
@@ -34,8 +33,9 @@ public class InsertionSortRun {
 
   public static void show(Object[] array) {
     for (Object o : array) {
-      System.out.println(o);
+      System.out.print(o + " ");
     }
+    System.out.println();
   }
 
 }
