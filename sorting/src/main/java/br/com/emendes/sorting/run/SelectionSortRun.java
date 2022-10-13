@@ -10,8 +10,8 @@ public class SelectionSortRun {
   public static void main(String[] args) {
     User[] users = new UsersArrayGenerator().generate();
 
-    Printer.print(users);
+    Printer.printArray(users);
     new SelectionSort<User>().sort(users);
-    Printer.print(users);
+    Printer.printArray(users);
   }
 }

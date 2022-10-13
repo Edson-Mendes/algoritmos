@@ -5,7 +5,7 @@ public class Printer {
   /**
    * Imprime o array no console.
    */
-  public static void print(Object[] array) {
+  public static void printArray(Object[] array) {
     for (Object o : array) {
       System.out.print(o + " ");
     }

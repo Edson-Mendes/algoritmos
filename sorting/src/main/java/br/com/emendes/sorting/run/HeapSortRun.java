@@ -10,9 +10,9 @@ public class HeapSortRun {
   public static void main(String[] args) {
     User[] users = new UsersArrayGenerator().generate();
 
-    Printer.print(users);
+    Printer.printArray(users);
     new HeapSort<User>().sort(users);
-    Printer.print(users);
+    Printer.printArray(users);
   }
 
 }

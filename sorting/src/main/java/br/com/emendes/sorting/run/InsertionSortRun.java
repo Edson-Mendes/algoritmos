@@ -9,9 +9,9 @@ public class InsertionSortRun {
   public static void main(String[] args) {
     User[] users = new UsersArrayGenerator().generate();
 
-    Printer.print(users);
+    Printer.printArray(users);
     new InsertionSort<User>().sort(users);
-    Printer.print(users);
+    Printer.printArray(users);
   }
 
 }
