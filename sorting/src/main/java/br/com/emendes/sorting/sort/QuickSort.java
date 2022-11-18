@@ -1,7 +1,8 @@
 package br.com.emendes.sorting.sort;
 
-public class QuickSort<T extends Comparable<T>> {
+public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 
+  @Override
   public void sort(T[] array){
     partition(array, 0, array.length - 1);
   }

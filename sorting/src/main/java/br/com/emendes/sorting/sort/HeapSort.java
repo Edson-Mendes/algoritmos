@@ -1,7 +1,8 @@
 package br.com.emendes.sorting.sort;
 
-public class HeapSort<T extends Comparable<T>> {
+public class HeapSort<T extends Comparable<T>> implements Sort<T> {
 
+  @Override
   public void sort(T[] array) {
     int lastIndex = array.length - 1;
     buildHeap(array, lastIndex);

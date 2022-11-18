@@ -1,7 +1,8 @@
 package br.com.emendes.sorting.sort;
 
-public class SelectionSort<T extends Comparable<T>> {
+public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
 
+  @Override
   public void sort(T[] array) {
     int length = array.length;
     int i;
