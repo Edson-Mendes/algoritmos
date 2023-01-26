@@ -1,5 +1,8 @@
 package br.com.emendes.sorting.run;
 
+import br.com.emendes.sorting.run.util.data.ArrayGenerator;
+import br.com.emendes.sorting.run.util.data.UsersArrayGenerator;
+import br.com.emendes.sorting.run.util.model.User;
 import br.com.emendes.sorting.sort.MergeSort;
 
 import java.util.Random;
@@ -9,7 +12,7 @@ public class MergeSortRun {
   public static void main(String[] args) {
 
     Random rand = new Random();
-    int[] array = new int[1000000];
+    Integer[] array = new Integer[1000000];
 
     for (int i = 0; i < array.length; i++) {
       array[i] = rand.nextInt(100000);

@@ -1,12 +1,13 @@
 package br.com.emendes.sorting.sort;
 
-public class MergeSort {
+public class MergeSort<T extends Comparable<T>> implements Sort<T> {
 
-  public void sort(int[] array) {
+  @Override
+  public void sort(T[] array) {
     mergeSort(array, 0, array.length - 1);
   }
 
-  private void mergeSort(int[] array, int leftIndex, int rightIndex) {
+  private void mergeSort(T[] array, int leftIndex, int rightIndex) {
     if (leftIndex >= rightIndex) return;
 
     int midIndex = (leftIndex + rightIndex)/2;
@@ -19,15 +20,15 @@ public class MergeSort {
     merge(array, leftIndex, rightIndex, midIndex);
   }
 
-  private void merge(int[] array, int leftIndex, int rightIndex, int midIndex) {
-    int[] aux = new int[rightIndex - leftIndex + 1];
+  private void merge(T[] array, int leftIndex, int rightIndex, int midIndex) {
+    Object[] aux = new Object[rightIndex - leftIndex + 1]; // Não sei se é possível criar um array de generics
 
     int currentLeftIndex = leftIndex;
     int currentRightIndex = midIndex + 1;
     int indexAux = 0;
 
     while (currentLeftIndex <= midIndex && currentRightIndex <= rightIndex) {
-      if (array[currentLeftIndex] > array[currentRightIndex]) {
+      if (array[currentLeftIndex].compareTo(array[currentRightIndex]) > 0) {
         aux[indexAux] = array[currentRightIndex];
         currentRightIndex++;
       } else {
@@ -50,7 +51,7 @@ public class MergeSort {
     }
 
     for (indexAux = 0; indexAux < aux.length; indexAux++) {
-      array[leftIndex] = aux[indexAux];
+      array[leftIndex] = (T) aux[indexAux];
       leftIndex++;
     }
   }
